@@ -1,0 +1,29 @@
+<div class="row" style="margin-bottom:3em;">
+    <div *ngIf="(userSelect != ' ');then singleUser else multipleUsers"></div>
+    <ng-template #singleUser>
+        <div class="col-xs-12" *ngFor="let user of users">
+            <div class="card" [hidden]="!(userSelect == user.id)">
+                <h4>{{user.name}}</h4>
+                <strong class="email">{{user.email}}</strong>
+                <strong>Address: <span>{{user.address.street + " " + user.address.suite + ", " + user.address.city + " " + user.address.zipcode}}</span></strong>
+                <strong>Phone:   <span>{{user.phone}}</span></strong>
+                <strong>Website: <span>{{user.website}}</span></strong>
+                <strong>Company: <span>{{user.company.name}}</span></strong>
+                <button (click)="redirect(user.id)">View Album</button>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #multipleUsers>
+        <div class="col-xs-4" *ngFor="let user of users">
+            <div class="card">
+                <h4>{{user.name}}</h4>
+                <strong class="email">{{user.email}}</strong>
+                <strong>Address: <span>{{user.address.street + " " + user.address.suite + ", " + user.address.city + " " + user.address.zipcode}}</span></strong>
+                <strong>Phone:   <span>{{user.phone}}</span></strong>
+                <strong>Website: <span>{{user.website}}</span></strong>
+                <strong>Company: <span>{{user.company.name}}</span></strong>
+                <button (click)="redirect(user.id)">View Album</button>
+            </div>
+        </div>
+    </ng-template>
+</div>

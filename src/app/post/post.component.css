@@ -1,0 +1,13 @@
+.right-profile{
+    float: right;
+    color: yellow;
+    cursor: pointer;
+}
+.comments{
+    border: 1px solid #000;
+    border-radius: 0.4em;
+    padding: 5px;
+}
+.comments h5{
+    color: red;
+}

@@ -1,0 +1,19 @@
+<header>
+    {{currLink}}
+</header>
+<div class="container">
+    <router-outlet></router-outlet>
+    <nav class="navbar-fixed-bottom">
+      <ul class="nav nav-pills">
+        <li class="nav-item" >
+          <a [routerLink]="['Posts']" routerLinkActive="active" class="nav-link">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['Albums/ ']" routerLinkActive="active" class="nav-link">Albums</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['Users/ ']" routerLinkActive="active" class="nav-link">Users</a>
+        </li>
+      </ul>
+    </nav>
+</div>

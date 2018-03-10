@@ -1,0 +1,99 @@
+.pointer-cls{
+    cursor: pointer !important;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  font-family: arial;
+  max-height: 330px;
+  border: 2px solid #000;
+  border-radius: 0.4em;
+  position: relative;
+  background-color: #F0F0F0;
+}
+.photo-container{
+    position: relative;
+    height: 350px;
+    width: 100%;
+}
+.photo-container img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+}
+.col-xs-4{
+    width: 25%;
+}
+
+.card strong span{
+    font-weight: 100 !important;
+}
+.clickToView {
+  color: red;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+#overlay{
+    position: fixed;
+    background-color: #000;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+#Modal{
+    position: absolute;
+    top: 3em;
+    left: 10%;
+    width: 85%;
+    margin: 0 auto;
+    border: 8px double black;
+}
+.modal-body{
+    margin: 0 auto;
+    text-align: center;
+}
+.closeModal{
+    float: right;
+    font-size: 2.5em;
+    font-weight: 700;
+    font-family: cursive;
+}
+.modal-photo-container{
+    width: 200px;
+    border: 2px solid #000;
+    border-radius: 0.4em;
+    text-align: center;
+    font-size: 12px;
+    display: inline-block;
+}
+.modal-photo{
+    margin: 0 auto;
+}

@@ -1,0 +1,39 @@
+// GLOBAL STYLES:
+.container{
+    background-color: #fff;
+}
+header{
+   text-align:center;
+   width: 100%;
+   background-color: #6076ff;
+   color: aliceblue;
+   font-size: 2em;
+}
+nav{
+   margin: 0 auto;
+   text-align:center;
+   bottom: 0;
+   left: 0;
+   position: fixed;
+   width: 100%;
+}
+nav ul{
+   margin: 0 auto;
+}
+nav ul li{
+   background-color: #6076ff;
+   border-right: 1px solid #000;
+   color: aliceblue;
+   margin: 0 auto;
+   display: inline-block;
+   text-align:center;
+   width: 33.3333333333%;
+}
+nav ul li a{
+   color: aliceblue;
+   width: 100%;
+}
+.active{
+    background-color:  #3b68ff !important;
+    border-top: 3px solid #000;
+}

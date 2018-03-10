@@ -1,0 +1,20 @@
+<div class="card" *ngFor="let post of posts; let i = index" style="margin-bottom:3em;">
+    <h5 class="card-header bg-primary text-white">
+        Posted By: {{getUser(post.userId).name}}
+        <span (click)="redirect(post.userId, 'Users')" class="right-profile">Go to Profile</span>
+        <span (click)="redirect(post.userId, 'Albums')" class="right-profile">Go to Albums &nbsp; &nbsp; &nbsp;</span>
+    </h5>
+    <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.body}}</p>
+        <button type="button" class="btn btn-success" *ngIf="showCommentsIdx != i" (click)="showCommentsIdx = i">Show Comments</button>
+        <button type="button" class="btn btn-success" *ngIf="showCommentsIdx == i" (click)="showCommentsIdx = -1">Hide Comments</button>
+        <div class="card-body" *ngIf="showCommentsIdx == i">
+            <div class="comments" *ngFor="let comment of post.comments">
+                <h5 class="card-title">{{comment.email}}</h5>
+                <h6 class="card-title">{{comment.name}}</h6>
+                <p class="card-text">{{comment.body}}</p>
+            </div>
+        </div>
+    </div>
+</div>

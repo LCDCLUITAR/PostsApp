@@ -1,0 +1,65 @@
+<div class="row" style="margin-bottom:3em;">
+    <div *ngIf="(userSelect != ' ');then singleUser else multipleUsers"></div>
+    <ng-template #singleUser>
+        <div class="col-xs-12" *ngFor="let album of albums">
+            <div class="card" [hidden]="!(userSelect == album.userId)">
+                <h6>{{album.title}}</h6>
+                <strong class="userName">{{getUser(album.userId).name}}</strong>
+                <strong class="clickToView pointer-cls" (click)="openModal(album)">Click to view album</strong>
+                <div class="photo-container" *ngIf="album.photos">
+                    <img [src]="album.photos[0].thumbnailUrl || ''" width="100%"/>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #multipleUsers>
+        <div class="col-xs-4" *ngFor="let album of albums">
+            <div class="card">
+                <h6>{{album.title}}</h6>
+                <strong class="userName">{{getUser(album.userId).name}}</strong>
+                <strong class="clickToView pointer-cls" (click)="openModal(album)">Click to view album</strong>
+                <div class="photo-container" *ngIf="album.photos">
+                    <img *ngIf="album.photos" [src]="album.photos[0].thumbnailUrl || ''" width="100%"/>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>
+<div id="overlay" class="pointer-cls" (click)="isModalOpen = false" *ngIf="isModalOpen"></div>
+<!-- modal -->
+<div id="Modal" *ngIf="isModalOpen">
+  <!-- dialog -->
+  <div class="modal-dialogs">
+    <!-- content -->
+    <div class="modal-content">
+      <!-- header -->
+      <div class="modal-header bg-primary text-white">
+          <h1 id="myModalLabel"class="modal-title">
+              {{selectedAlbum.title}}
+          </h1>
+          <span (click)="isModalOpen = false" class="closeModal pointer-cls">X</span>
+      </div>
+      <!-- header -->
+      <!-- body -->
+      <div class="modal-body">
+        <div class="modal-photo-container" *ngFor="let photo of selectedAlbum.photos">
+            <div class="modal-title-photo">
+                {{photo.title}}
+            </div>
+            <div class="modal-photo">
+                <img [src]="photo.thumbnailUrl" />
+            </div>
+        </div>
+      </div>
+      <!-- body -->
+      <!-- footer -->
+      <div class="modal-footer">
+        <button class="btn btn-secondary pointer-cls" (click)="isModalOpen = false">close</button>
+      </div>
+      <!-- footer -->
+    </div>
+    <!-- content -->
+  </div>
+  <!-- dialog -->
+</div>
+<!-- modal -->
